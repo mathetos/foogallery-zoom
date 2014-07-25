@@ -26,6 +26,7 @@ $bordercolor = foogallery_gallery_template_setting( 'bordercolor', '#333333' );
 ?>
 <style>
 img.zoom {max-width: <?php echo $viswidth; ?>px;}
+#img_zoom {max-width: <?php echo $viswidth; ?>px; max-height: <?php echo $viswidth; ?>px;}
 </style>
 
 <div class="foogallery-container foogallery-zoom<?php echo foogallery_build_class_attribute( $current_foogallery, $spacing, $border_style, $alignment); ?>">
@@ -36,10 +37,10 @@ img.zoom {max-width: <?php echo $viswidth; ?>px;}
 
 <script type="text/javascript" language="javascript">
 		jQuery(document).ready(function ($) {
-			$('.zoom').imageLens({
-			'lensSize': <?php echo $lenssize?>,
-			'borderSize': <?php echo $bordersize?>,
-			'borderColor': '<?php echo $bordercolor?>'
+			$(".zoom").imageLens({
+			lensSize: <?php echo $lenssize?>,
+			borderSize: <?php echo $bordersize?>,
+			borderColor: "<?php echo $bordercolor?>"
 			});
 		});
 </script>
