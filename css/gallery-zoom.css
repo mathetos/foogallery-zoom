@@ -2,32 +2,6 @@
 Add any CSS that will be needed by your ZOOM gallery template. This will be output to the frontend
 */
 
-ul.foogallery-zoom li {
-	display: inline;
-}
-
-	ul.foogallery-zoom li a {
-		background: #fff;
-		display: inline;
-		float: left;
-		margin: 0 30px 20px 0;
-		width: auto;
-		padding: 10px 10px 15px;
-	}
-
-		ul.foogallery-zoom li a:hover {
-			 -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
-			 -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
-		 }
-
-	ul.foogallery-zoom li img {
-		display: block;
-		width: 190px;
-		margin-bottom: 12px;
-	}
-
-div.zoombox {display: block; float: left;}
-	
 .minicolors {
 	position: relative;
 }
@@ -254,68 +228,67 @@ div.zoombox {display: block; float: left;}
 	padding-left: inherit;
 }
 
-/* Bootstrap theme */
-.minicolors-theme-bootstrap .minicolors-swatch {
-	top: 3px;
-	left: 3px;
-	width: 28px;
-	height: 28px;
-	border-radius: 3px;
-}
-.minicolors-theme-bootstrap .minicolors-swatch-color {
-	border-radius: inherit;
-}
-.minicolors-theme-bootstrap.minicolors-position-right .minicolors-swatch {
-	left: auto;
-	right: 3px;
-}
-.minicolors-theme-bootstrap .minicolors-input {
-	padding-left: 44px;
-}
-.minicolors-theme-bootstrap.minicolors-position-right .minicolors-input {
-	padding-right: 44px;
-	padding-left: 12px;
-}
-.minicolors-theme-bootstrap .minicolors-input.input-lg + .minicolors-swatch {
-	top: 4px;
-	left: 4px;
-	width: 37px;
-	height: 37px;
-	border-radius: 5px;
-}
-.minicolors-theme-bootstrap .minicolors-input.input-sm + .minicolors-swatch {
-	width: 24px;
-	height: 24px;
-}
-
 /* Gutter widths */
 
-.foogallery-zoom.spacing-width-0 .zoombox {
+.foogallery-zoom.spacing-width-0 .magnify {
 	margin-right: 0px;
 	margin-bottom: 0px;
 }
 
-.foogallery-zoom.spacing-width-5 .zoombox {
+.foogallery-zoom.spacing-width-5 .magnify {
 	margin-right: 5px;
 	margin-bottom: 5px;
 }
 
-.foogallery-zoom.spacing-width-10 .zoombox {
+.foogallery-zoom.spacing-width-10 .magnify {
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
-.foogallery-zoom.spacing-width-15 .zoombox {
+.foogallery-zoom.spacing-width-15 .magnify {
 	margin-right: 15px;
 	margin-bottom: 15px;
 }
 
-.foogallery-zoom.spacing-width-20 .zoombox {
+.foogallery-zoom.spacing-width-20 .magnify {
 	margin-right: 20px;
 	margin-bottom: 20px;
 }
 
-.foogallery-zoom.spacing-width-25 .zoombox {
+.foogallery-zoom.spacing-width-25 .magnify {
 	margin-right: 25px;
 	margin-bottom: 25px;
 }
+
+.magnify { position: relative; display: block; float: left;}
+
+/*Lets create the magnifying glass*/
+.large {
+	position: absolute;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	
+	/*Multiple box shadows to achieve the glass effect*/
+	-webkit-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+	0 0 7px 7px rgba(0, 0, 0, 0.25), 
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	
+	-moz-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+	0 0 7px 7px rgba(0, 0, 0, 0.25), 
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+	0 0 7px 7px rgba(0, 0, 0, 0.25), 
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	
+	/*Lets load up the large image first*/
+	
+	z-index: 999;
+	
+	/*hide the glass by default*/
+	display: none;
+}
+
+/*To solve overlap bug at the edges during magnification*/
+.small { display: block; }

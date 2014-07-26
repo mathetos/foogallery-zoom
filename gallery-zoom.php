@@ -14,33 +14,24 @@ $args = foogallery_gallery_template_setting( 'thumbnail_size', 'thumbnail' );
 $args['link'] = 'none';
 
 $args['image_attributes'] = array(
-	'class'  => 'zoom',
+	'class'  => 'small',
 	'height' => $args['height'],
 	'width' => $args['width'],
 );
 $spacing = foogallery_gallery_template_setting( 'spacing', '' );
-$viswidth = foogallery_gallery_template_setting( 'viswidth', '200' );
-$lenssize = foogallery_gallery_template_setting( 'lenssize', '200' );
-$bordersize = foogallery_gallery_template_setting( 'bordersize', '5' );
+$viswidth = foogallery_gallery_template_setting( 'viswidth', 200 );
+$lenssize = foogallery_gallery_template_setting( 'lenssize', 200 );
+$bordersize = foogallery_gallery_template_setting( 'bordersize', 5 );
 $bordercolor = foogallery_gallery_template_setting( 'bordercolor', '#333333' );
 ?>
 <style>
-img.zoom {max-width: <?php echo $viswidth; ?>px;}
-#img_zoom {max-width: <?php echo $viswidth; ?>px; max-height: <?php echo $viswidth; ?>px;}
+.foogallery-zoom .small {max-width: <?php echo $viswidth; ?>px;}
+.large {width: <?php echo $lenssize; ?>px; height: <?php echo $lenssize; ?>px; }
 </style>
 
 <div class="foogallery-container foogallery-zoom<?php echo foogallery_build_class_attribute( $current_foogallery, $spacing, $border_style, $alignment); ?>">
 	<?php foreach ( $current_foogallery->attachments() as $attachment ) {
-		echo '<div class="zoombox">' . $attachment->html( $args ) . '</div>';
+		?><p class="thesource"><?php $src = $post->src; ?></p><?php
+		echo '<div class="magnify" id="' . $attachment->ID . '"><div class="large"  style="background: url(' . $src . ') no-repeat;"></div>' . $attachment->html( $args ) . '</div>';
 	} ?>
 </div>
-
-<script type="text/javascript" language="javascript">
-		jQuery(document).ready(function ($) {
-			$(".zoom").imageLens({
-			lensSize: <?php echo $lenssize?>,
-			borderSize: <?php echo $bordersize?>,
-			borderColor: "<?php echo $bordercolor?>"
-			});
-		});
-</script>

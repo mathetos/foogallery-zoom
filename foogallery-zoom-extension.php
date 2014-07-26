@@ -27,16 +27,6 @@ if ( !class_exists( 'ZOOM_Template_FooGallery_Extension' ) ) {
 
 	require_once( 'foogallery-zoom-init.php' );
 	
-	// Enqueue Minicolors Color picker to FooGallery CPT
-	add_action( 'admin_print_scripts-post.php', 'admin_minicolors', 11 );
-
-	function admin_minicolors() {
-		global $post_type;
-		if( 'foogallery' == $post_type )
-		wp_enqueue_script( 'minicolors', ZOOM_FG_URL . 'js/minicolors.js' );
-	}
-	
-	
 	class ZOOM_Template_FooGallery_Extension {
 		/**
 		 * Wire up everything we need to run the extension
