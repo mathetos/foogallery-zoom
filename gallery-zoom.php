@@ -26,12 +26,27 @@ $bordercolor = foogallery_gallery_template_setting( 'bordercolor', '#333333' );
 ?>
 <style>
 .foogallery-zoom .small {max-width: <?php echo $viswidth; ?>px;}
-.large {width: <?php echo $lenssize; ?>px; height: <?php echo $lenssize; ?>px; }
+.large {
+	width: <?php echo $lenssize; ?>px; 
+	height: <?php echo $lenssize; ?>px; 
+	-webkit-box-shadow: 0 0 0 <?php echo $bordersize; ?>px <?php echo $bordercolor; ?>, 
+	0 0 7px 7px rgba(0, 0, 0, 0.35), 
+	inset 0 0 40px 0 rgba(0, 0, 0, 0.5);
+	
+	-moz-box-shadow: 0 0 0 <?php echo $bordersize; ?>px <?php echo $bordercolor; ?>, 
+	0 0 7px 7px rgba(0, 0, 0, 0.35), 
+	inset 0 0 40px 0 rgba(0, 0, 0, 0.5);
+	
+	box-shadow: 0 0 0 <?php echo $bordersize; ?>px <?php echo $bordercolor; ?>, 
+	0 0 7px 7px rgba(0, 0, 0, 0.35), 
+	inset 0 0 40px 0 rgba(0, 0, 0, 0.5);
+	}
+
 </style>
 
 <div class="foogallery-container foogallery-zoom<?php echo foogallery_build_class_attribute( $current_foogallery, $spacing, $border_style, $alignment); ?>">
 	<?php foreach ( $current_foogallery->attachments() as $attachment ) {
-		?><p class="thesource"><?php $src = $post->src; ?></p><?php
-		echo '<div class="magnify" id="' . $attachment->ID . '"><div class="large"  style="background: url(' . $src . ') no-repeat;"></div>' . $attachment->html( $args ) . '</div>';
+		$attr['src'] = apply_filters( 'foogallery_attachment_resize_thumbnail', $attachment->url, $args, $this );
+		echo '<div class="magnify" id="' . $attachment->ID . '"><div class="large"  style="background: url(' . $attr['src'] . ') no-repeat;"></div>' . $attachment->html( $args ) . '</div>';
 	} ?>
 </div>

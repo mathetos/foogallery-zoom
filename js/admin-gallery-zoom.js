@@ -7,7 +7,8 @@
 		//do something when the gallery template is changed to zoom
 		jQuery('INPUT.minicolors').minicolors({
 		position: 'top left',
-		theme: 'default'
+		theme: 'default',
+		opacity: false,
 		});
 	};
 

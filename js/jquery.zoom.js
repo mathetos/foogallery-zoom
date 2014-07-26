@@ -48,11 +48,11 @@ jQuery(function($){
 			//Finally the code to fade out the glass if the mouse is outside the container
 			if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0)
 			{
-				$(this).children(".large").fadeIn(100);
+				$(this).children(".large").fadeIn(500);
 			}
 			else
 			{
-				$(this).children(".large").fadeOut(100);
+				$(this).children(".large").fadeOut(200);
 			}
 			if($(this).children(".large").is(":visible"))
 			{
