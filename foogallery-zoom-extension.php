@@ -121,13 +121,13 @@ if ( !class_exists( 'ZOOM_Template_FooGallery_Extension' ) ) {
 							'spacing-width-25' => __( '25 pixels', 'foogallery-zoom' )
 						)
 					),
-					// array(
-						// 'id'      => 'lightbox',
-						// 'section' => __('Thumbnail Settings', 'foogallery'),
-						// 'title'   => __('Lightbox', 'foogallery-zoom'),
-						// 'desc'    => __('Choose whether you\'d like launch a lightbox on click.', 'foogallery-zoom'),
-						// 'type'    => 'lightbox'
-					// ),
+					array(
+						'id'      => 'lightbox',
+						'section' => __('Thumbnail Settings', 'foogallery'),
+						'title'   => __('Lightbox', 'foogallery-zoom'),
+						'desc'    => __('Choose whether you\'d like launch a lightbox on click.', 'foogallery-zoom'),
+						'type'    => 'lightbox'
+					),
 					array(
 						'id'      => 'border-style',
 						'title'   => __('Border Style', 'foogallery-zoom'),
@@ -140,7 +140,6 @@ if ( !class_exists( 'ZOOM_Template_FooGallery_Extension' ) ) {
 							'border-style-circle-white' => array('label' => 'Circular white border with shadow', 'img' => ZOOM_FG_URL . '/assets/border-style-icon-circle-white.png'),
 							'border-style-square-black' => array('label' => 'Square Black', 'img' => ZOOM_FG_URL . '/assets/border-style-icon-square-black.png'),
 							'border-style-circle-black' => array('label' => 'Circular Black', 'img' => ZOOM_FG_URL . '/assets/border-style-icon-circle-black.png'),
-							'border-style-inset' => array('label' => 'Square Inset', 'img' => ZOOM_FG_URL . '/assets/border-style-icon-square-inset.png'),
 							'border-style-rounded' => array('label' => 'Plain Rounded', 'img' => ZOOM_FG_URL . '/assets/border-style-icon-plain-rounded.png'),
 							'' => array('label' => 'Plain', 'img' => ZOOM_FG_URL . '/assets/border-style-icon-none.png'),
 						)
@@ -149,20 +148,20 @@ if ( !class_exists( 'ZOOM_Template_FooGallery_Extension' ) ) {
 						'id'      => 'grayscale',
 						'title'   => __('Gray on Hover?', 'foogallery-zoom'),
 						'section' => __('Thumbnail Styles', 'foogallery-zoom'),
-						'desc'    => __('You can set the thumbnail image to be grayscale either immediately (On Load), when the magnifying glass hovers over it (On Zoom), or not at all.', 'foogallery-zoom'),
+						'desc'    => __('You can set the thumbnail image to be grayscale either immediately (On Load), when the magnifying glass hovers over it (On Hover), or not at all.', 'foogallery-zoom'),
 						'type'    => 'select',
 						'default' => 'none',
 						'choices' => array(
 							'no-gray' => __( 'No thanks!', 'foogallery-zoom' ),
 							'gray-on-load' => __( 'On Load', 'foogallery-zoom' ),
-							'gray-on-hover' => __( 'On Zoom', 'foogallery-zoom' ),
+							'gray-on-hover' => __( 'On Hover', 'foogallery-zoom' ),
 						)
 					),
 					array(
 						'id'      => 'blur',
 						'title'   => __('Blur Thumbnail?', 'foogallery-zoom'),
 						'section' => __('Thumbnail Styles', 'foogallery-zoom'),
-						'desc'    => __('You can set the thumbnail image to be slightly blurred either immediately (On Load), when the magnifying glass hovers over it (On Zoom), or not at all.', 'foogallery-zoom'),
+						'desc'    => __('You can set the thumbnail image to be slightly blurred either immediately (On Load), when the magnifying glass hovers over it (On Hover), or not at all.', 'foogallery-zoom'),
 						'type'    => 'select',
 						'default' => 'none',
 						'choices' => array(
@@ -188,6 +187,17 @@ if ( !class_exists( 'ZOOM_Template_FooGallery_Extension' ) ) {
 						'section' => __('Lens Style', 'foogallery-zoom'),
 						'desc'    => __('The size of the border around the magnifying circle', 'foogallery-zoom'),
 						'default' => '2',
+						'type'    => 'number',
+						'class'   => 'small-text',
+						'step'    => 1,
+						'min'     => 0
+					),
+					array(
+						'id'      => 'shadowdepth',
+						'title'   => __('Outer Shadow Depth', 'foogallery-zoom'),
+						'section' => __('Lens Style', 'foogallery-zoom'),
+						'desc'    => __('Set how far from the lens the shadow extends', 'foogallery-zoom'),
+						'default' => '7',
 						'type'    => 'number',
 						'class'   => 'small-text',
 						'step'    => 1,
