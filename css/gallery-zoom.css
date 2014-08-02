@@ -50,44 +50,9 @@
 	margin-bottom: 25px;
 }
 
-
+.magnify:hover {cursor: none;}
 /* Border styles */ 
 .foogallery-zoom.border-style-rounded .small { border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; }  .foogallery-zoom.border-style-square-white .small { border: 5px solid #FFF; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }  .foogallery-zoom.border-style-circle-white .small { border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; border: 5px solid #FFF; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }  .foogallery-zoom.border-style-circle-black .small { border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; border: 3px solid #000; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }  .foogallery-zoom.border-style-square-black .small { border: 3px solid #000; -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }  .foogallery-zoom.border-style-inset .small { position: relative; max-width: 100%; }  .foogallery-zoom.border-style-inset a::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; right: 0; box-shadow: inset 0 0 20px #000; -moz-box-shadow: inset 0 0 20px #000; -webkit-box-shadow: inset 0 0 20px #000; } 
 
-/* Grayscale Settings */
-div[class*=on-hover] .magnify:hover .small {
--webkit-transition: all 750ms ease-in-out;
--moz-transition: all 750ms ease-in-out;
--ms-transition: all 750ms ease-in-out;
--o-transition: all 750ms ease-in-out;
-transition: all 750ms ease-in-out;
-}
-
-.foogallery-zoom.gray-on-load .small {
--webkit-filter: grayscale(100%);
--moz-filter: grayscale(100%);
--o-filter: grayscale(100%);
--ms-filter: grayscale(100%);
-filter: grayscale(100%);
-}
-.foogallery-zoom.gray-on-hover .magnify:hover .small {
--webkit-filter: grayscale(100%);
--moz-filter: grayscale(100%);
--o-filter: grayscale(100%);
--ms-filter: grayscale(100%);
-filter: grayscale(100%);
-}
-.foogallery-zoom.blur-on-load .small {
--webkit-filter: blur(3px);
--moz-filter: blur(3px);
--o-filter: blur(3px);
--ms-filter: blur(3px);
-filter: blur(3px);
-}
-.foogallery-zoom.blur-on-hover .magnify:hover .small {
--webkit-filter: blur(3px);
--moz-filter: blur(3px);
--o-filter: blur(3px);
--ms-filter: blur(3px);
-filter: blur(3px);
-}
+/* Grayscale/Blur Settings */ 
+div[class*=on-hover] .magnify:hover .small { -webkit-transition: all 750ms ease-in-out; -moz-transition: all 750ms ease-in-out; -ms-transition: all 750ms ease-in-out; -o-transition: all 750ms ease-in-out; transition: all 750ms ease-in-out; }  .foogallery-zoom.gray-on-load .small { -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); -ms-filter: grayscale(100%); filter: grayscale(100%); } .foogallery-zoom.gray-on-hover .magnify:hover .small { -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); -ms-filter: grayscale(100%); filter: grayscale(100%); } .foogallery-zoom.blur-on-load .small { -webkit-filter: blur(3px); -moz-filter: blur(3px); -o-filter: blur(3px); -ms-filter: blur(3px); filter: blur(3px); } .foogallery-zoom.blur-on-hover .magnify:hover .small { -webkit-filter: blur(3px); -moz-filter: blur(3px); -o-filter: blur(3px); -ms-filter: blur(3px); filter: blur(3px); } .foogallery-zoom.gray-on-load.blur-on-hover .small { -webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -o-filter: grayscale(100%); -ms-filter: grayscale(100%); filter: grayscale(100%); }  .foogallery-zoom.gray-on-load.blur-on-hover .magnify:hover .small, .foogallery-zoom.gray-on-hover.blur-on-hover .magnify:hover .small, .foogallery-zoom.gray-on-load.blur-on-load .small, .foogallery-zoom.gray-on-hover.blur-on-load .magnify:hover .small  { -webkit-filter: grayscale(100%)  blur(3px); -moz-filter: grayscale(100%)  blur(3px); -o-filter: grayscale(100%)  blur(3px); -ms-filter: grayscale(100%)  blur(3px); filter: grayscale(100%)  blur(3px); }

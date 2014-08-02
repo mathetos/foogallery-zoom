@@ -60,7 +60,7 @@ document.location.href = $(this).data("url");});
 <?php
 // } ?>
 -->
-<div class="foogallery-container foogallery-zoom<?php echo foogallery_build_class_attribute( $current_foogallery, $spacing, $border_style, $gray, $blur, /*$lightbox*/); ?>">
+<div class="foogallery-container foogallery-zoom<?php echo foogallery_build_class_attribute( $current_foogallery, $spacing, $border_style, $gray, $blur /*$lightbox*/); ?>">
 	<?php foreach ( $current_foogallery->attachments() as $attachment ) {
 		$attr['src'] = apply_filters( 'foogallery_attachment_resize_thumbnail', $attachment->url, $args, $this );
 		echo '<div class="magnify" id="' . $attachment->ID . '"><div class="large"  style="background: url(' . $attr['src'] . ') no-repeat;" data-url="' . $attachment->url . '"></div>' . $attachment->html( $args ) . '</div>';
