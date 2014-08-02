@@ -1,4 +1,4 @@
-=== FooGallery Owl Carousel Template ===
+=== FooGallery ZOOM Template ===
 Contributors: webdevmattcrom, fooplugins
 Donate link: http://mattcromwell.com/foogallery-templates
 Tags: foogallery, image zoom, gallery, grayscale, blur, responsive
