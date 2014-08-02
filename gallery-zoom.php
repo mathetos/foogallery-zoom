@@ -23,6 +23,10 @@ $viswidth = foogallery_gallery_template_setting( 'viswidth', 200 );
 $lenssize = foogallery_gallery_template_setting( 'lenssize', 200 );
 $bordersize = foogallery_gallery_template_setting( 'bordersize', 5 );
 $bordercolor = foogallery_gallery_template_setting( 'bordercolor', '#333333' );
+$border_style = foogallery_gallery_template_setting( 'border-style', 'border-style-square-white' );
+// $lightbox = foogallery_gallery_template_setting( 'lightbox', 'none' );
+$gray = foogallery_gallery_template_setting( 'grayscale', 'none' );
+$blur = foogallery_gallery_template_setting( 'blur', 'none' );
 ?>
 <style>
 .foogallery-zoom .small {max-width: <?php echo $viswidth; ?>px;}
@@ -43,10 +47,22 @@ $bordercolor = foogallery_gallery_template_setting( 'bordercolor', '#333333' );
 	}
 
 </style>
-
-<div class="foogallery-container foogallery-zoom<?php echo foogallery_build_class_attribute( $current_foogallery, $spacing, $border_style, $alignment); ?>">
+<!--
+<?php
+// if ($lightbox != 'none'){
+?>
+<script>
+jQuery(function($){
+$(".large").on('click',function(){
+document.location.href = $(this).data("url");});
+});
+</script>
+<?php
+// } ?>
+-->
+<div class="foogallery-container foogallery-zoom<?php echo foogallery_build_class_attribute( $current_foogallery, $spacing, $border_style, $gray, $blur, /*$lightbox*/); ?>">
 	<?php foreach ( $current_foogallery->attachments() as $attachment ) {
 		$attr['src'] = apply_filters( 'foogallery_attachment_resize_thumbnail', $attachment->url, $args, $this );
-		echo '<div class="magnify" id="' . $attachment->ID . '"><div class="large"  style="background: url(' . $attr['src'] . ') no-repeat;"></div>' . $attachment->html( $args ) . '</div>';
+		echo '<div class="magnify" id="' . $attachment->ID . '"><div class="large"  style="background: url(' . $attr['src'] . ') no-repeat;" data-url="' . $attachment->url . '"></div>' . $attachment->html( $args ) . '</div>';
 	} ?>
 </div>

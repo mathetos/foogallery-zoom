@@ -1,8 +1,5 @@
-// I get this js on http://web3canvas.com/item/magnify-glass-for-image-zoom-using-jquery-and-css3/ 
-// and I made some corrections: multiple images support and fix problem of multiples requests to the same image.
-// You can download It on my Github: https://github.com/rjsandim/Magnify-glass-with-multiple-images-support
-
-// JavaScript Document
+//* Zoom.js source: 
+//* https://github.com/rjsandim/Magnify-glass-with-multiple-images-support */
 
 jQuery(function($){
 
@@ -80,4 +77,4 @@ jQuery(function($){
 		native_height = 0;
 		loadLocker = true;
 	});
-})
+});
