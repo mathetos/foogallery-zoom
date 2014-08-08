@@ -3,7 +3,7 @@ foogallery-zoom
 
 A simple grid gallery with one awesome effect: ZOOM!
 
-=== Updates ==
+== Updates ==
 
 Versions 1.1.0
 * Added Border styles
